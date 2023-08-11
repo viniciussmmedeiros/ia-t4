@@ -123,7 +123,7 @@ class TestEvaluateMask(unittest.TestCase):
         self.assertEqual(score1_B, expected_score1_B, "Caso de teste 1B: Pontuação incorreta para o estado inicial (Jogador B).")
 
         # Testar avaliação para o Jogador 'W' no state1
-        score1_W = evaluate_count(state1, 'W')
+        score1_W = evaluate_mask(state1, 'W')
         self.assertEqual(score1_W, expected_score1_W, "Caso de teste 1W: Pontuação incorreta para o estado inicial (Jogador W).")
 
         # test case 2: surprisingly, it's a winning situation for B but it is evaluated negatively
@@ -142,9 +142,8 @@ BBBWBBBB
         # Test evaluation for Player 'B' in state
         score_B = evaluate_mask(state2, 'B')
         self.assertEqual(score_B, expected_score_B, "Caso de teste 2B: Pontuação incorreta para o estado (Jogador B).")
-
         # Testar avaliação para o Jogador 'W' no state
-        score_W = evaluate_count(state2, 'W')
+        score_W = evaluate_mask(state2, 'W')
         self.assertEqual(score_W, expected_score_W, "Caso de teste 2W: Pontuação incorreta para o estado (Jogador W).")
 
 
@@ -166,7 +165,7 @@ WWWWWWW."""), 'B')
         self.assertEqual(score_B, expected_score_B, "Caso de teste 3B: Pontuação incorreta para o estado (Jogador B).")
 
         # Testar avaliação para o Jogador 'W' no state
-        score_W = evaluate_count(state3, 'W')
+        score_W = evaluate_mask(state3, 'W')
         self.assertEqual(score_W, expected_score_W, "Caso de teste 3W: Pontuação incorreta para o estado (Jogador W).")
 
 
